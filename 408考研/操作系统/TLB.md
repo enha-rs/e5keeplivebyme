@@ -38,3 +38,4 @@
 
 我们把二级分页再推广到多级页表，就会发现页表占用的内存空间更少了，这一切都要归功于对局部性原理的充分应用。
 
+<img src="https://gitee.com/nothingimpossible/study-notes-img/raw/master/img/20230820194701.png" alt="image-20230820194700503" style="zoom:80%;" />
