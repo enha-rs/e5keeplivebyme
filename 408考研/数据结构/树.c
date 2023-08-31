@@ -46,3 +46,31 @@ void PreOrder2(BiTree T)
         }     
     }
 }
+
+// 后序遍历非递归算法
+void PostOrder2(BiTree T){
+    InitStack(S);
+    BiTree p = T;
+    BiTree r = NULL;
+    while (p || !isEmpty(S)){
+        if (p){
+            push(S, p);
+            p = p->lchild;
+        }
+        else {
+            GetTop(S, p);
+            if (p->rchild && p->rchild != r)
+            {
+                p = p->rchild;
+            }
+            else {
+                pop(S, p);
+                visit(p);
+                r = p;
+                p = NULL;
+            }
+            
+        }
+    }
+    
+}
