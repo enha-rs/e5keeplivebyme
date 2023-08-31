@@ -10,7 +10,7 @@ void InOrder2(BiTree T)
 {
     InitStack(S);              // 初始化栈
     BiTree p = T;              // p为遍历指针
-    while (p || isEmpty(S))    // p不空 或者 栈不空时循环
+    while (p || !isEmpty(S))    // p不空 或者 栈不空时循环
     {
         if(p)                  // 一路向左
         {
@@ -23,5 +23,26 @@ void InOrder2(BiTree T)
             visit(p);
             p = p->rchild;
         }
+    }
+}
+
+// 前序遍历非递归算法
+// 和中序的区别只有 visit(p) 在代码中的位置
+void PreOrder2(BiTree T)
+{
+    InitStack(S);
+    BiTree p = T;
+    while (!p || !isEmpty(S))
+    {
+        if (p)
+        {
+            visit(p);
+            Push(S, p);
+            p = p->lchild;
+        }
+        else {
+            pop(S, p);
+            p = p->rchild;
+        }     
     }
 }
