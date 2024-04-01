@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Web Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Website</h1>
+    </header>
+    <div id="app">
+      <button @click="count++">Count is: {{ count }}</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
+        ligula id sapien posuere, ac tincidunt tortor scelerisque.
+      </p>
+    </main>
+    <footer>
+      <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+    <script type="module">
+        import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+      createApp({
+        setup() {
+          return {
+            count: ref(0),
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
